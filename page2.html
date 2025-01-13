@@ -108,9 +108,9 @@
     </style>
 </head>
 <body>
-    <!-- <div class="player" id="player">
-        <img src="./images/声音打开按钮.png" alt="player">
-    </div> -->
+    <div class="player" id="player">
+        <img src="./images/sound.png" alt="player">
+    </div>
     <audio id="backgroundAudio" src="./bg.mp3" autoplay  loop></audio>
 
 
@@ -160,32 +160,32 @@
             modal.style.display = 'none';
         });
 
-        // const audio = document.getElementById('backgroundAudio');
-        // const player = document.getElementById('player');
+        const audio = document.getElementById('backgroundAudio');
+        const player = document.getElementById('player');
 
-        // audio.play().then(() => {
-        //     console.log('Audio is playing');
-        // }).catch(error => {
-        //     console.error('Audio play failed:', error);
-        //     document.body.addEventListener('click', () => {
-        //         audio.muted = false;
-        //         audio.play().then(() => {
-        //             console.log('Audio is playing after user interaction');
-        //         }).catch(error => {
-        //             console.error('Audio play failed after user interaction:', error);
-        //         });
-        //     });
-        // });
+        audio.play().then(() => {
+            console.log('Audio is playing');
+        }).catch(error => {
+            console.error('Audio play failed:', error);
+            document.body.addEventListener('click', () => {
+                audio.muted = false;
+                audio.play().then(() => {
+                    console.log('Audio is playing after user interaction');
+                }).catch(error => {
+                    console.error('Audio play failed after user interaction:', error);
+                });
+            });
+        });
 
-        // player.addEventListener('click', () => {
-        //     if (audio.paused) {
-        //         audio.play();
-        //         player.style.display = 'none';
-        //         player.style.opacity = '0';
-        //     } else {
-        //         audio.pause();
-        //     }
-        // });
+        player.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                player.style.display = 'none';
+                player.style.opacity = '0';
+            } else {
+                audio.pause();
+            }
+        });
     </script>
 </body>
 </html>
