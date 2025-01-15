@@ -1,21 +1,31 @@
-<!DOCTYPE html>
+
+
+
+
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="img.alicdn.com" as="image">
+    <link rel="dns-prefetch" href="//img.alicdn.com">
+    <link rel="preconnect" href="//img.alicdn.com">
     <title>Pages</title>
     <style>
         * {
-            cursor: url('./images/鼠标图片.png'), auto;
+            cursor: url('https://img.alicdn.com/imgextra/i3/O1CN01U77pWh1lk6KAmiJLx_!!6000000004856-2-tps-115-17.png'), auto;
         }
-        body, html {
+
+        body,
+        html {
             margin: 0;
             padding: 0;
             height: 100%;
             box-sizing: content-box;
             overflow: hidden;
-            cursor: url('./images/鼠标图片.png'), auto;
+            cursor: url('https://img.alicdn.com/imgextra/i3/O1CN01U77pWh1lk6KAmiJLx_!!6000000004856-2-tps-115-17.png'), auto;
         }
+
         .fullscreen-grid {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
@@ -25,20 +35,23 @@
             padding: 50px 40px;
             gap: 30px;
         }
+
         .grid-item {
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color:#f8abae;
+            background-color: #f8abae;
             cursor: pointer;
-            background-image: url('./images/背景.png')
+            background-image: url('https://img.alicdn.com/imgextra/i1/O1CN01oaym5W1TybmmJgUXG_!!6000000002451-2-tps-748-428.png')
         }
+
         .grid-item img {
             height: 80%;
-            object-fit:cover;
+            object-fit: cover;
             transition: opacity 1s ease-in-out;
 
         }
+
         .modal {
             display: none;
             position: fixed;
@@ -52,11 +65,13 @@
             align-items: center;
             z-index: 1000;
         }
+
         .modal-content {
-           width: 100%;
-           height: 100%;
-           text-align: center;
+            width: 100%;
+            height: 100%;
+            text-align: center;
         }
+
         .modal-content img {
             position: absolute;
             top: 50%;
@@ -66,95 +81,238 @@
             max-height: 85%;
             object-fit: contain;
         }
-        .modal-content p {
-            margin-top: 20px;
-            font-size: 20px;
-        } 
-         .player {
+
+        .player {
             position: fixed;
-            top:5px;
-            left:40px;
-            /* transform: translate(-50%, -50%); */
-            font-size: 1.5rem;
+            top: 20px;
+            left: 40px;
+            font-size: 1rem;
             color: white;
             cursor: pointer;
             z-index: 1000;
-            /* animation: wave 60s infinite ease-in-out; */
         }
 
-        /* @keyframes wave {
-            0% {
-                top: 10%;
-                left: 10%;
-            }
-            25% {
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
-            50% {
-                top: 80%;
-                left: 0;
-            }
-            75% {
-                top: 0;
-                left: 80%;
-            }
-            100% {
-                top: 90%;
-                left: 90%
-            }
-        } */
+        .hidden {
+            display: none
+        }
     </style>
 </head>
-<body>
+
+<body cz-shortcut-listen="true"><script  type="text/javascript">
+(function  (d)  {
+var  t=d.createElement("script");t.type="text/javascript";t.async=true;t.id="tb-beacon-aplus";
+t.setAttribute("exparams","category=&userid=&aplus&yunid=&yunpk=&channel=&cps=");
+t.src="//g.alicdn.com/alilog/mlog/aplus_v2.js";
+d.getElementsByTagName("head")[0].appendChild(t);
+})(document);
+</script><script>
+with(document)with(body)with(insertBefore(createElement("script"),firstChild))setAttribute("exparams","category=&userid=&aplus&udpid=&&yunid=&&trid=a3b5c7a117369464505398410e&asid=AQAAAAASs4dnxcYwSQAAAAAR5Pc6ppWGqg==",id="tb-beacon-aplus",src=(location>"https"?"//g":"//g")+".alicdn.com/alilog/mlog/aplus_v2.js")
+</script>
     <div class="player" id="player">
-        <img src="./images/sound.png" alt="player">
+        <img src="https://img.alicdn.com/imgextra/i2/O1CN01RUUFhN24Uxw301VTU_!!6000000007395-2-tps-51-13.png"
+            alt="player">
     </div>
-    <audio id="backgroundAudio" src="./bg.mp3" autoplay  loop></audio>
+    <audio id="backgroundAudio" src="./bg.mp3" autoplay="true" loop="true"></audio>
 
+    <div class="fullscreen-grid" id="gridContainer">
+        <div class="grid-item">
+            <img src="https://img.alicdn.com/imgextra/i2/O1CN01bQUUkt1lxNoIc2qA0_!!6000000004885-2-tps-89-178.png"
+                alt="图案 1">
+            <img src="https://img.alicdn.com/imgextra/i3/O1CN01FRf6nR1E4X3X6Q1ZF_!!6000000000298-2-tps-88-178.png"
+                class="hidden color" alt="图案 1">
+        </div>
+        <div class="grid-item">
+            <img src="https://img.alicdn.com/imgextra/i4/O1CN01d3IZLd1eHWITYSPCb_!!6000000003846-2-tps-75-178.png"
+                alt="图案 2">
+            <img src="https://img.alicdn.com/imgextra/i2/O1CN01cXTwPn1hSSbcEPZSJ_!!6000000004276-2-tps-75-182.png"
+                alt="图案 2" class="hidden color">
 
-    <div class="fullscreen-grid" id="gridContainer"></div>
+        </div>
+        <div class="grid-item">
+            <img src="https://img.alicdn.com/imgextra/i2/O1CN01JY3FBP24a0IAkO3wH_!!6000000007406-2-tps-109-178.png"
+                alt="图案 3">
+            <img src="https://img.alicdn.com/imgextra/i3/O1CN01o8Xjhw1Zzsa13Jzy8_!!6000000003266-2-tps-111-182.png"
+                alt="图案 3" class="hidden color">
+
+        </div>
+        <div class="grid-item">
+            <img src="https://img.alicdn.com/imgextra/i3/O1CN01bRkFBS1CfVnscc4yW_!!6000000000108-2-tps-72-179.png"
+                alt="图案 4">
+            <img src="https://img.alicdn.com/imgextra/i4/O1CN0183RnyB1blndKNbrEW_!!6000000003506-2-tps-71-182.png"
+                alt="图案 4" class="hidden color">
+
+        </div>
+        <div class="grid-item">
+            <img src="https://img.alicdn.com/imgextra/i1/O1CN01Z6F0Jb29nLukCXcda_!!6000000008112-2-tps-135-178.png"
+                alt="图案 5">
+            <img src="https://img.alicdn.com/imgextra/i4/O1CN01U0BxJl1zLHTsZYDQf_!!6000000006697-2-tps-136-180.png"
+                alt="图案 5" class="hidden color">
+
+        </div>
+        <div class="grid-item">
+            <img src="https://img.alicdn.com/imgextra/i1/O1CN01C07G5w1Bx5NpnWNGa_!!6000000000011-2-tps-74-178.png"
+                alt="图案 6">
+            <img src="https://img.alicdn.com/imgextra/i3/O1CN01b2Nqn61ZDKb24NsW1_!!6000000003160-2-tps-76-179.png"
+                alt="图案 6" class="hidden color">
+
+        </div>
+        <div class="grid-item">
+
+            <img src="https://img.alicdn.com/imgextra/i2/O1CN012Vf11t1IC63pkATFA_!!6000000000856-2-tps-100-183.png"
+                alt="图案 7">
+            <img src="https://img.alicdn.com/imgextra/i1/O1CN01q5JOy01c5x3uYSnMK_!!6000000003550-2-tps-114-192.png"
+                alt="图案 7" class="hidden color">
+
+        </div>
+        <div class="grid-item">
+            <img src="https://img.alicdn.com/imgextra/i1/O1CN01SiRYBH1Mqda9b4284_!!6000000001486-2-tps-124-178.png"
+                alt="图案 8">
+            <img src="https://img.alicdn.com/imgextra/i3/O1CN01mzW1QE1dcIeUi1cnf_!!6000000003756-2-tps-131-183.png"
+                alt="图案 8" class="hidden color">
+        </div>
+        <div class="grid-item">
+            <img src="https://img.alicdn.com/imgextra/i3/O1CN01y710N31rj58SN58jY_!!6000000005666-2-tps-75-179.png"
+                alt="图案 9">
+            <img src="https://img.alicdn.com/imgextra/i3/O1CN01ggpIWy1XZCH0FShuK_!!6000000002937-2-tps-75-178.png"
+                alt="图案 9" class="hidden color">
+
+        </div>
+        <div class="grid-item">
+            <img src="https://img.alicdn.com/imgextra/i2/O1CN01CFjfSa1HimiDGG5cQ_!!6000000000792-2-tps-99-178.png"
+                alt="图案 10">
+            <img src="https://img.alicdn.com/imgextra/i1/O1CN019s9PMz1zVMC5XPTNq_!!6000000006719-2-tps-100-179.png"
+                alt="图案 10" class="hidden color">
+
+        </div>
+        <div class="grid-item">
+            <img src="https://img.alicdn.com/imgextra/i4/O1CN01jiW2il28XwyjLcRJe_!!6000000007943-2-tps-117-178.png"
+                alt="图案 11">
+            <img src="https://img.alicdn.com/imgextra/i2/O1CN01aCQlSj1Ybm7PKr6rc_!!6000000003078-2-tps-117-180.png"
+                alt="图案 11" class="hidden color">
+
+        </div>
+        <div class="grid-item">
+            <img src="https://img.alicdn.com/imgextra/i1/O1CN01q41vfR1Jy17BB7Xr0_!!6000000001096-2-tps-76-179.png"
+                alt="图案 12">
+            <img src="https://img.alicdn.com/imgextra/i2/O1CN01Q8JIrT1sy1fsTueo1_!!6000000005834-2-tps-77-180.png"
+                alt="图案 12" class="hidden color">
+
+        </div>
+        <div class="grid-item">
+            <img src="https://img.alicdn.com/imgextra/i4/O1CN01eWohva1Cmq8k1zIeT_!!6000000000124-2-tps-88-175.png"
+                alt="图案 13">
+            <img src="https://img.alicdn.com/imgextra/i1/O1CN01J2452A1QOTh5UeCWq_!!6000000001966-2-tps-89-175.png"
+                alt="图案 13" class="hidden color">
+
+        </div>
+        <div class="grid-item">
+            <img src="https://img.alicdn.com/imgextra/i1/O1CN01CONEBc1gmmZ1cNQHG_!!6000000004185-2-tps-86-175.png"
+                alt="图案 14">
+            <img src="https://img.alicdn.com/imgextra/i2/O1CN01zZvSL220UGs4MVE8d_!!6000000006852-2-tps-86-175.png"
+                alt="图案 14" class="hidden color">
+
+        </div>
+        <div class="grid-item">
+            <img src="https://img.alicdn.com/imgextra/i2/O1CN01mX3taZ1mX6heLEO6z_!!6000000004963-2-tps-99-175.png"
+                alt="图案 15">
+            <img src="https://img.alicdn.com/imgextra/i2/O1CN01qKaZmD1a0KyYZYtqa_!!6000000003267-2-tps-99-175.png"
+                alt="图案 15" class="hidden color">
+
+        </div>
+        <div class="grid-item">
+            <img src="https://img.alicdn.com/imgextra/i4/O1CN01e81UiM1af6E030mMw_!!6000000003356-2-tps-73-175.png"
+                alt="图案 16">
+            <img src="https://img.alicdn.com/imgextra/i3/O1CN01U8fZkK1f96dYs6GqC_!!6000000003963-2-tps-75-179.png"
+                alt="图案 16" class="hidden color">
+
+        </div>
+        <div class="grid-item">
+            <img src="https://img.alicdn.com/imgextra/i3/O1CN01RJzQvf1Q8RpbnL3sL_!!6000000001931-2-tps-104-187.png"
+                alt="图案 17">
+            <img src="https://img.alicdn.com/imgextra/i2/O1CN01Ewytn61idHa422dV1_!!6000000004435-2-tps-102-175.png"
+                alt="图案 17" class="hidden color">
+
+        </div>
+        <div class="grid-item">
+            <img src="https://img.alicdn.com/imgextra/i2/O1CN01ihhVgM1CFPEB5MFKt_!!6000000000051-2-tps-76-175.png"
+                alt="图案 18">
+            <img src="https://img.alicdn.com/imgextra/i2/O1CN01xq6yu81It9I6817U7_!!6000000000950-2-tps-73-176.png"
+                alt="图案 18" class="hidden color">
+
+        </div>
+    </div>
 
     <div class="modal" id="modal">
-        <div class="modal-content">
-            <img id="modalImage" src="" alt="Modal Image">
+        <div class="modal-content" id="modalImage">
+            <img src="https://img.alicdn.com/imgextra/i2/O1CN01TkaqlJ1dCeTHEuFA1_!!6000000003700-2-tps-763-494.png"
+                class="hidden model-img" alt="图案 1">
+            <img src="https://img.alicdn.com/imgextra/i1/O1CN013RL6wF1Rma9csLCWL_!!6000000002154-2-tps-759-517.png"
+                alt="图案 2" class="hidden model-img">
+            <img src="https://img.alicdn.com/imgextra/i2/O1CN01O0KiCB1YMCeZBznUs_!!6000000003044-2-tps-785-494.png"
+                alt="图案 3" class="hidden model-img">
+            <img src="https://img.alicdn.com/imgextra/i4/O1CN01je2e1t27xlgp3MJAN_!!6000000007864-2-tps-709-510.png"
+                alt="图案 4" class="hidden model-img">
+            <img src="https://img.alicdn.com/imgextra/i4/O1CN01TlebsD1mKHc2zQvqQ_!!6000000004935-2-tps-754-443.png"
+                alt="图案 5" class="hidden model-img">
+            <img src="https://img.alicdn.com/imgextra/i4/O1CN01uuBKfA1lrt3ZQQpXT_!!6000000004873-2-tps-721-508.png"
+                alt="图案 6" class="hidden model-img">
+            <img src="https://img.alicdn.com/imgextra/i2/O1CN011pg3WY1VZ4wKq0NyF_!!6000000002666-2-tps-746-457.png"
+                alt="图案 7" class="hidden model-img">
+            <img src="https://img.alicdn.com/imgextra/i4/O1CN01zoSNKP1Fvwrdrfe4x_!!6000000000550-2-tps-787-456.png"
+                alt="图案 8" class="hidden model-img">
+            <img src="https://img.alicdn.com/imgextra/i1/O1CN01U4eTcl1rIyYsCVn1x_!!6000000005609-2-tps-718-520.png"
+                alt="图案 9" class="hidden model-img">
+            <img src="https://img.alicdn.com/imgextra/i2/O1CN01XEK6Vo1ofvYuRWghq_!!6000000005253-2-tps-768-494.png"
+                alt="图案 10" class="hidden model-img">
+            <img src="https://img.alicdn.com/imgextra/i2/O1CN0111DIno1r5h4lWKhRZ_!!6000000005580-2-tps-764-465.png"
+                alt="图案 11" class="hidden model-img">
+            <img src="https://img.alicdn.com/imgextra/i2/O1CN01FfItsc1oJU9fGJS6S_!!6000000005204-2-tps-727-494.png"
+                alt="图案 12" class="hidden model-img">
+            <img src="https://img.alicdn.com/imgextra/i3/O1CN01HpEQAQ1ejSSOn4ChE_!!6000000003907-2-tps-766-507.png"
+                alt="图案 13" class="hidden model-img">
+            <img src="https://img.alicdn.com/imgextra/i3/O1CN01YWuRex1aEzeIicArb_!!6000000003299-2-tps-743-492.png"
+                alt="图案 14" class="hidden model-img">
+            <img src="https://img.alicdn.com/imgextra/i1/O1CN012NyOQ31cnSgkovZyV_!!6000000003645-2-tps-763-508.png"
+                alt="图案 15" class="hidden model-img">
+            <img src="https://img.alicdn.com/imgextra/i4/O1CN01DqF10A1X7iVg0dgkD_!!6000000002877-2-tps-730-509.png"
+                alt="图案 16" class="hidden model-img">
+            <img src="https://img.alicdn.com/imgextra/i1/O1CN011PStxL27Uujkn6Ms5_!!6000000007801-2-tps-721-539.png"
+                alt="图案 17" class="hidden model-img">
+            <img src="https://img.alicdn.com/imgextra/i4/O1CN01jiN57L1L7vIU2kuAY_!!6000000001253-2-tps-723-497.png"
+                alt="图案 18" class="hidden model-img">
         </div>
     </div>
 
     <script>
-        const gridContainer = document.getElementById('gridContainer');
         const modal = document.getElementById('modal');
         const modalImage = document.getElementById('modalImage');
-        const modalText = document.getElementById('modalText');
-        const totalItems = 18;
 
-        for (let i = 1; i <= totalItems; i++) {
-            const gridItem = document.createElement('div');
-            gridItem.className = 'grid-item';
+        const gridItems = document.querySelectorAll('.grid-item');
+        gridItems.forEach((item, index) => {
+            const img1 = item.querySelector('img:nth-child(1)');
+            const img2 = item.querySelector('img:nth-child(2)');
+            const img3 = item.querySelector('img:nth-child(3)');
 
-            const img = document.createElement('img');
-            img.src = `./images/图案${i}黑白.png`;
-            img.alt = `图案 ${i}`;
-
-            img.addEventListener('mouseenter', () => {
-                img.src = `./images/图案${i}彩色.png`;
-                img.style.transform = 'scale(1.1)';
+            img1.addEventListener('mouseenter', () => {
+                img2.classList.remove('hidden');
+                img2.style.transform = 'scale(1.1)';
+                img1.classList.add('hidden');
+            });
+            img2.addEventListener('mouseleave', () => {
+                img1.classList.remove('hidden');
+                img2.classList.add('hidden');
             });
 
-            img.addEventListener('mouseleave', () => {
-                img.src = `./images/图案${i}黑白.png`;
-                img.style.transform = 'scale(1)';
-            });
-
-            gridItem.addEventListener('click', () => {
-                modalImage.src = `./images/图案${i}.png`;
+            item.addEventListener('click', () => {
+                const modalImages = modalImage.querySelectorAll('.model-img');
+                modalImages.forEach(img => img.classList.add('hidden'));
+                console.log(modalImages, modalImages[index]);
+                if (modalImages[index]) {
+                    modalImages[index].classList.remove('hidden');
+                }
                 modal.style.display = 'flex';
             });
-
-            gridItem.appendChild(img);
-            gridContainer.appendChild(gridItem);
-        }
+        });
 
         modal.addEventListener('click', () => {
             modal.style.display = 'none';
@@ -163,19 +321,19 @@
         const audio = document.getElementById('backgroundAudio');
         const player = document.getElementById('player');
 
-        audio.play().then(() => {
-            console.log('Audio is playing');
-        }).catch(error => {
-            console.error('Audio play failed:', error);
-            document.body.addEventListener('click', () => {
-                audio.muted = false;
-                audio.play().then(() => {
-                    console.log('Audio is playing after user interaction');
-                }).catch(error => {
-                    console.error('Audio play failed after user interaction:', error);
-                });
-            });
-        });
+        // audio.play().then(() => {
+        //     console.log('Audio is playing');
+        // }).catch(error => {
+        //     console.error('Audio play failed:', error);
+        //     document.body.addEventListener('click', () => {
+        //         audio.muted = false;
+        //         audio.play().then(() => {
+        //             console.log('Audio is playing after user interaction');
+        //         }).catch(error => {
+        //             console.error('Audio play failed after user interaction:', error);
+        //         });
+        //     });
+        // });
 
         player.addEventListener('click', () => {
             if (audio.paused) {
@@ -188,4 +346,5 @@
         });
     </script>
 </body>
+
 </html>
